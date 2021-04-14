@@ -3,12 +3,14 @@ import StdEnv
 import PPM.Image
 import PPM.IO
 import Util.StringUtils
+import Filters.Filter
 
 
-Start w = saveToPPM image (fname +++ "out.ppm") ww
+Start w = saveToPPM filteredImage ("out.ppm") ww
 where
+    fname = "in"
     (image, ww) = loadFromPPM (fname +++ ".ppm") w
-    fname = "test1"
+    filteredImage = applyColorFilter grayscaleFilter image
 
 // Start w = saveToPPM img (fname +++ ".ppm") w
 // where
