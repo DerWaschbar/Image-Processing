@@ -3,4 +3,4 @@ import StdEnv
 import PPM.Image
 import Filters.ColorFilters
 
-applyColorFilter :: (Pixel -> Pixel) Image -> Image
+applyPixelFilter :: (Pixel -> Pixel) Image -> Image
