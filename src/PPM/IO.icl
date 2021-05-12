@@ -10,7 +10,7 @@ writeImageToFile file img
 # file = file <<< img.type <<< "\n"
 # file = file <<< img.width <<< ' ' <<< img.height <<< '\n'
 # file = file <<< img.maxVal <<< '\n'
-# file = foldl (\fl px = fl <<< px <<< ' ') file pixelList
+# file = foldl (\fl px = fl <<< px <<< '\n') file pixelList
 = file
 where 
     pixelList = imageToList img
