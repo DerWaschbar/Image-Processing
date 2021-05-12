@@ -16,3 +16,12 @@ where
     dr = px1.r - px2.r
     dg = px1.g - px2.g
     db = px1.b - px2.b
+
+normalizedPixels :: Image -> [[Pixel]]
+normalizedPixels img = pixels
+where
+    pixels = normalize img.width img.pixels
+
+normalize :: !Int ![Pixel] -> ![[Pixel]]
+normalize _ [] = []
+normalize w pxs = [take w pxs] ++ (normalize w (drop w pxs)) 
